@@ -1,11 +1,11 @@
 import logging
-import asyncio
 from aiogram import Bot, Dispatcher, executor, types, filters
 from decouple import config
 from command import command, callback, startpars
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 bot = Bot(token=config('TOKEN'))
-dp = Dispatcher(bot)
+dp = Dispatcher(bot, storage=MemoryStorage())
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")
 
@@ -32,10 +32,10 @@ async def text_contains_all_handler(message: types.message):
 async def text_contains_all_handler(message: types.message):
     await message.answer("Привет!")
 
-# Other message #  ПОЧЕМУ ЭТО ВЛАЗИТ БЕЗ ОЧЕРЕДИ !!!
+# Other message #
+# фильтра здесь нет! хандлер ловит все что сюда дошло!
 @dp.message_handler()
 async def user_text(message: types.message):
-    await asyncio.sleep(8)
     await command(dp, message)
 
 # Buttonlink #
