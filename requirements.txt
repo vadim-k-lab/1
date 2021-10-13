@@ -1,0 +1,5 @@
+aiogram
+aiohttp
+requests
+json
+decouple
