@@ -7,7 +7,7 @@ from aiogram.utils.executor import start_webhook
 from command import callback, cansel, command, help, startpars
 from register import set_commands
 
-WEBHOOK_HOST = 'https://depbot.herokuapp.com'  # name your app
+WEBHOOK_HOST = 'https://depbot1.herokuapp.com'  # name your app
 WEBHOOK_PATH = '/webhook/'
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 WEBAPP_HOST = '0.0.0.0'
