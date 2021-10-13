@@ -2,4 +2,4 @@ aiogram
 aiohttp
 requests
 json
-decouple
+python-decouple

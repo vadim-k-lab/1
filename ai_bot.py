@@ -12,9 +12,9 @@ WEBHOOK_PATH = '/webhook/'
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = os.environ.get('PORT')
-TOKEN = os.environ['TOKEN']
+#TOKEN = os.environ['TOKEN']
 
-bot = Bot(token=TOKEN)#config('TOKEN'))
+bot = Bot(token=config('TOKEN'))
 dp = Dispatcher(bot, storage=MemoryStorage())
 
 #set_commands(dp.bot) # регистрация команд не работает!
